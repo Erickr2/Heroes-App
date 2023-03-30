@@ -10,11 +10,11 @@ export const HeroesRoutes = () => {
             <div className='container'>
                 <Routes>                                                     {/* mis rutas  */}
                     <Route path="Marvel" element={<MarvelPage />} />         {/* cada una de mis rutas  */}
-                    <Route path="DC" element={<DcPage />} />                 {/* cada una de mis rutas  */}
-                    <Route path="Search" element={<SearchPage />} />                 {/* cada una de mis rutas  */}
-                    <Route path="Hero" element={<HeroPage />} />                 {/* cada una de mis rutas  */}
+                    <Route path="DC" element={<DcPage />} />                
+                    <Route path="Search" element={<SearchPage />} />         {/* :id -> comodin */}      
+                    <Route path="Hero/:id" element={<HeroPage />} />          {/* :id -> comodin hace referencia al id de los heros */}
 
-                    <Route path="/" element={<Navigate to={"Marvel"} />} />  {/* cada una de mis rutas  */}
+                    <Route path="/" element={<Navigate to={"/Marvel"} />} /> 
 
                 </Routes>
             </div>

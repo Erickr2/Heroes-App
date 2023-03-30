@@ -7,8 +7,8 @@ export const Navbar = () => {
     const navigate = useNavigate(); //ch que me ayuda a navegar a la pantall de login
 
     const onLogOut = () => { 
-        navigate('/login', { //indico la paagina a la que voy a navegar y replace me ayuda a borrar el historial del stack
-            replace: true
+        navigate('/login', { //indico la paagina a la que voy a navegar y replace me ayuda a borrar el historial del stack de mis vistas, evita que pueda regresar a mi vista anterior
+            replace: true 
         });
     }
 
