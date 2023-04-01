@@ -1,4 +1,5 @@
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
+import { useMemo } from "react";
+import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { getHeroById } from "../helpers/getHeroById";
 
 
@@ -6,7 +7,7 @@ export const HeroPage = () => {
 
   const {id} = useParams() //puedo tomar elementos de uan URL, en este caso el id que viene de mi heroesRutes
   
-  const hero = getHeroById(id);// funcion que busca el hero que coincida con el id que se manda 
+  const hero = useMemo( () => getHeroById(id), [id]) ;// funcion que busca el hero que coincida con el id que se manda, memorizamos el valor y agregamos las dependencias (id), cada que cambie el id  
 
   const navigate = useNavigate()
  
@@ -26,7 +27,7 @@ export const HeroPage = () => {
         <img 
         src={`/assets/heroes/${id}.jpg`} 
         alt={hero.superhero}
-        className="img-thumbnail"
+        className="img-thumbnail animate__animated animate__fadeInLeft"
          />
       </div>
 
